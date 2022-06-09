@@ -28,6 +28,7 @@ class RemoveNoExecuteCells(Preprocessor):
                 if "no_execute" in cell.metadata.get("tags"):
                     continue
             executable_cells.append(cell)
+            executable_cells.append(cell+1)
         notebook.cells = executable_cells
         return notebook, resources
 
